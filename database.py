@@ -12,6 +12,12 @@ def home():
     return jsonify({"message": "Database Service Running"})
 
 
+@app.route('/api/test', methods=['POST'])
+def test_database():
+    data = request.json
+    return jsonify({"message": "Database received your message", "data": data})
+
+
 def create_connection(db_file):
     conn = None
     try:
